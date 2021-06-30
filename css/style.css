@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
+.carrinho{
+    position: fixed;
+    right: 0;
+    top: 55px;
+    width:400px;
+    height: 600px;
+    display: none;
+    z-index: 1000;
+
+}
+
+.navbar, #myCarousel{
+    border-bottom: 1px solid rgba(0, 0, 0, .5);
+    box-shadow: 3px 5px 4px rgba(0, 0, 0, .5);
+}
+
+
+.carousel-item{
+    height: 32rem;
+    background: black;
+    color: white;
+    position: relative;
+}
+
+.indicator{
+    width: 15px !important;
+    height: 15px !important;
+    border-radius: 50%;
+}
+
+.indicator.active{
+    background-color: lightblue;
+}
+
+.container{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 30%;
+    padding-bottom: 50px;
+    width: 70%;
+
+}
+
+.overlay-image{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-position: center;
+    background-size: cover;
+    opacity: .5;
+}
+
+.promocoes{
+    margin-top: 40px;
+    text-align: center;
+}
+
+.cards{
+    display: grid;
+    grid-template:  1fr/ 1fr 1fr 1fr ;
+    margin:0 30px;
+
+}
+.card{
+    width: 320px;
+    height: 400px;
+}
+
+.card img{    max-width: 320px;
+    max-height: 220px;
+}
+
+
+
+.feminino, .masculino, .unisex{
+    margin-top: 300px;
+    text-align: center;
+    width: 100%;
+}
+
+.cards-feminino, .cards-masculino, .cards-unisex{
+    display: grid;
+    grid-template: 1fr 1fr 1fr/ 1fr 1fr 1fr;
+    gap: 10px;
+    max-height: 2450px;
+    margin: 0 50px;
+}
+
+.banner{
+    background: rgb(32, 32, 32);
+    position: relative;
+    width: 100%;
+    height: 350px;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Lobster', 'cursive';
+    margin-top: 30px;
+}
+
+
+.direitos{
+    width: 100%;
+    display: grid;
+    grid-template: 1fr / 1fr 1fr 1fr 1fr;
+    color: grey;
+    background: rgb(44, 43, 43);
+    font-size: 10px;
+    height: 300px;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin-top: 40px;
+}
+
+.final{
+    background: black;
+    color: grey;
+    text-align: center;
+    padding: 10px;
+}
+
+
+/* Responsividade */
+
+
+@media (max-width: 1100px) {
+
+
+
+    .direitos{
+        grid-template: 1fr 1fr / 1fr 1fr 1fr;
+        font-size: 9px;
+        
+    }
+}
+
+@media (max-width: 1050px) {
+ 
+    .cards, .cards-feminino, .cards-masculino, .cards-unisex{
+        grid-template: 1fr 1fr / 1fr 1fr;
+        margin-left: 90px;
+        gap: 10px;    
+    }
+}
+
+@media (max-width: 765px) {
+
+    .cards, .cards-feminino, .cards-masculino, .cards-unisex{
+        grid-template: 1fr /1fr;
+        margin-left: 150px;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .direitos{
+        grid-template: 1fr 1fr / 1fr 1fr;
+        font-size: 8px;
+    }
+}
+
+@media (max-width: 700px) {
+    .cards, .cards-feminino, .cards-masculino, .cards-unisex{
+        margin-left: 70px;
+    }
+}
+
+.carrinho{
+    display: none;
+}
+
+.items{
+    position: relative;
+    width: 100%;
+ 
+}
+
+.item{
+    height: 80px;
+    font-size: 13px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+
+}
+
+.name-price{
+    display: flex;
+    flex-direction: column;
+}
+
+.actions{
+    width: 110px;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.action{
+    width: 45px;
+    height: 40px;
+    border-radius: 50%;
+    line-height: 40px;
+    transition: .4s;
+    cursor: pointer;
+    background: rgb(44, 43, 43);
+    text-align: center;
+    color: white;
+}
+
+.actions div:hover {
+    background: rgb(95, 94, 94);
+}
+
+.exit{
+    position: absolute;
+    top: -5px;
+    left: -9px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: red;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    color: white;
+    transition: .4s;
+}
+
+.exit:hover{
+    background: rgb(49, 48, 48);
+}
+
+
+

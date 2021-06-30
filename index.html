@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Minha Loja</title>
+
+</head>
+<body>
+
+  <!-- Warning -->
+
+  <div class="alert alert-warning alert-dismissible mt-0 mb-0">
+    <button class="btn-close" data-bs-dismiss="alert"></button>
+    <i class="fas fa-exclamation-triangle"></i> <strong>Aviso:</strong> Esse site é demonstrativo, portanto, serve apenas como um meio de aprimorar as habilidades do desenvolvimento web
+  </div>
+
+  <!-- Header e NavBar -->
+
+  <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">Fashion Famous</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#promocoes">Promoção</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Mais
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#masculino">Tênis</a></li>
+                    <li><a class="dropdown-item" href="#masculino">Camisas</a></li>
+                    <li><a class="dropdown-item" href="#feminino">Vestidos</a></li>
+                    <li><a class="dropdown-item" href="#masculino">Calças</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item disabled" href="#">Shorts</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <div class="d-flex">
+                <button class="btn btn-primary" id="btn-carrinho">
+                  <span>Carrinho</span>
+                  <i class="fa fa-cart-plus"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </nav>
+  </header>
+
+  <div class="carrinho p-4 bg-dark text-light flex-column justify-content-around rounded">
+    <div class="exit"><i class="fas fa-times"></i></div>
+    <div class="title mb-4">
+      <h3 class="text-center">Suas Compras</h3>
+      <hr>
+    </div>
+    <div class="items d-flex flex-column">
+      
+
+      
+    </div>
+
+    <div class="pay d-flex justify-content-around align-items-center mb-5">
+      <h1>Total</h1>
+      <div id="valorTotal" class="fw-bold">R$<span>0</span></div>
+      <button class="btn btn-success" id="finalizar">Finalizar</button>
+    </div>
+  </div>
+
+  <!-- Carrosel inicial -->
+
+  <div id="myCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+      <ol class="carousel-indicators text-danger">
+          <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="indicator active"></li>
+          <li data-bs-target="#myCarousel" data-bs-slide-to="1" class="indicator"></li>
+          <li data-bs-target="#myCarousel" data-bs-slide-to="2" class="indicator"></li>
+      </ol>
+      <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="2000">
+              <div class="overlay-image" style="background-image: url(images/mulher-na-praia.jpg)"></div>
+              <div class="container text-start">
+                  <h1>Feminino</h1>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores doloribus quas quidem repellat odit enim corporis, ullam vero vel sequi excepturi, quos, blanditiis eum ducimus itaque. Alias est veniam ut.
+                  </p>
+                  <a href="#feminino" class="btn btn-primary btn-lg">
+                      Ver Mais
+                  </a>
+              </div>
+          </div>
+          <div class="carousel-item" data-bs-interval="1000">
+            <div class="overlay-image" style="background-image: url(images/homem-camisa-rosa.jpg);"></div>
+              <div class="container text-center">
+                  <h1>Masculino</h1>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores doloribus quas quidem repellat odit enim corporis, ullam vero vel sequi excepturi, quos, blanditiis eum ducimus itaque. Alias est veniam ut.
+                  </p>
+                  <a href="#masculino" class="btn btn-primary btn-lg">
+                      Ver Mais
+                  </a>
+              </div>
+          </div>
+          <div class="carousel-item" data-bs-interval="1000">
+            <div class="overlay-image" style="background-image: url(images/unisex.jpg);"></div>
+              <div class="container text-end">
+                  <h1>Unisex</h1>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores doloribus quas quidem repellat odit enim corporis, ullam vero vel sequi excepturi, quos, blanditiis eum ducimus itaque. Alias est veniam ut.
+                  </p>
+                  <a href="#unisex" class="btn btn-primary btn-lg">
+                      Ver Mais
+                  </a>
+              </div>
+          </div>
+      </div>
+      <a href="#myCarousel" class="carousel-control-prev" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </a>
+      <a href="#myCarousel" class="carousel-control-next" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </a>
+  </div>
+
+  <!-- Cards das Promoções -->
+
+  <section class="promocoes" id="promocoes">
+    <h1>Promoções</h1>
+    <div class="cards">
+      <div class="card">
+        <div class="card-img-top">
+          <img src="images/vestido-amarelo.jpg" alt="Mulher com vestido amarelo">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title mb-1">Vestido amarelo</h5>
+          <h6 class="card-subtitle mb-2 mt-2 text-success font-weight-bold">Promoção</h6>
+          <p class="card-text">Vestido amarelo com bolinhas laranjas</p>
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalPromocao1">Ver Mais</button>
+        </div>
+      </div>
+
+
+      <div class="card">
+        <div class="card-img-top">
+          <img src="images/mulher-bluesa-branca.jpg" alt="Mulher com blusa branca">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title mb-1">Blusa branca</h5>
+          <h6 class="card-subtitle mb-2 mt-2 text-success font-weight-bold">Promoção</h6>
+          <p class="card-text">Blusa branca de botões</p>
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalPromocao2">Ver Mais</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img-top">
+          <img src="images/homem-calca-preta.jpg" alt="Homem com calça Jeans">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title mb-1">Calça Jeans</h5>
+          <h6 class="card-subtitle mb-2 mt-2 text-success font-weight-bold">Promoção</h6>
+          <p class="card-text">Calça Jeans preta</p>
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalPromocao3">Ver Mais</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- #Modals Promoções -->
+  
+
+  <div class="modal fade" id="modalPromocao1">
+    <div class="modal-dialog modal-sm modal-dialog-centered">
+      <div class="modal-content align-items-center justify-content-center">
+        <div class="modal-header">
+          Oferta Imperdível
+        </div>
+        <div class="modal-body">
+          <h2 class="display-5">50% de Desconto</h2>
+          <h3>Vestido Amarelo</h3>
+          <p class="d-flex flex-column">
+            <p><s>R$299,98</s></p>
+            <p>Por Apenas R$<span>149,99</span></p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" onclick="addItem(this)">
+            Comprar Agora
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modalPromocao2">
+    <div class="modal-dialog modal-sm modal-dialog-centered">
+      <div class="modal-content align-items-center justify-content-center">
+        <div class="modal-header">
+          Oferta Imperdível
+        </div>
+        <div class="modal-body">
+          <h2 class="display-5">50% de Desconto</h2>
+          <h3>Blusa Branca</h3>
+          <p class="d-flex flex-column">
+            <p><s>R$99,98</s></p>
+            <p>Por Apenas R$<span>49,99</span></p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" onclick="addItem(this)">
+            Comprar Agora
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modalPromocao3">
+    <div class="modal-dialog modal-sm modal-dialog-centered">
+      <div class="modal-content align-items-center justify-content-center">
+        <div class="modal-header">
+          Oferta Imperdível
+        </div>
+        <div class="modal-body">
+          <h2 class="display-5">50% de Desconto</h2>
+          <h3>Calça Jeans</h3>
+          <p class="d-flex flex-column">
+            <p><s>R$99,98</s></p>
+            <p>Por Apenas R$<span>49,99</span></p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" onclick="addItem(this)">
+            Comprar Agora
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Cards Feminino -->
+
+  <section class="feminino" id="feminino">
+    <h1 class="mb-5">Feminino</h1>
+    <nav>
+      <ul class="nav nav-pills justify-content-center align-items-center mb-5">
+        <a class="listFem nav-link active" data-filter="allFem">Todos</a>
+        <a class="listFem nav-link" data-filter="vestidos" >Vestidos</a>
+        <a class="listFem nav-link" data-filter="camisasFem">Camisetas</a>
+        <a class="listFem nav-link" data-filter="calcasFem">Calças</a>
+        <a class="listFem nav-link" data-filter="sapatosFem">Sapatos</a>
+      </ul>
+    </nav>
+    <div class="cards-feminino">
+      <div class="card cardFem vestidos">
+        <div class="card-img-top">
+          <img src="images/vestido-amarelo.jpg" alt="Mulher com vestido amarelo">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title mb-1">Vestido amarelo</h5>
+          <h6 class="card-subtitle mb-2 mt-2 text-success font-weight-bold">Promoção</h6>
+          <p class="card-text">Vestido amarelo com bolinhas laranjas</p>
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalPromocao1">Ver Mais</button>
+        </div>
+      </div>
+      
+      <div class="card cardFem vestidos">
+        <div class="card-img-top">
+          <img src="images/vestido-verde.jpg" alt="Mulher com vestido verde">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title mb-1">Vestido verde</h5>
+          <p class="card-text">Vestido verde com bolinhas brancas</p>
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalVestidoVerde">Ver Mais</button>
+        </div>
+      </div>
+
+      <div class="card cardFem sapatosFem">
+        <div class="card-img-top">
+          <img src="images/sapato-feminino-rosa.jpg" alt="Sapato Rosa">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title mb-1">Sapato Rosa</h5>
+          <p class="card-text">Sapato Feminino Rosa</p>
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalSapatoRosa">Ver Mais</button>
+        </div>
+      </div>
+
+      <div class="card cardFem sapatosFem">
+        <div class="card-img-top">
+          <img src="images/sapato-feminino-amarelo.jpg" alt="Sapato Amarelo">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title mb-1">Sapato Amarelo</h5>
+          <p class="card-text">Sapato Feminino Amarelo</p>
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalSapatoAmarelo">Ver Mais</button>
+        </div>
+      </div>
+
+      <div class="card cardFem sapatosFem">
+        <div class="card-img-top">
+          <img src="images/bota-feminina-preta.jpg" alt="Bota preta">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title mb-1">Bota Preta</h5>
+          <p class="card-text">Bota Feminina Preta</p>
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalBotaPreta">Ver Mais</button>
+        </div>
+      </div>
+
+      <div class="card cardFem calcasFem">
+        <div class="card-img-top">
+          <img src="images/jeans-feminina-colada.jpg" alt="Mulher com Jeans Colada">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title mb-1">Calça Jeans colada</h5>
+          <p class="card-text">Calça Jeans colada</p>
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalJeansColada">Ver Mais</button>
+        </div>
+      </div>
+
+      <div class="card cardFem calcasFem">
+        <div class="card-img-top">
+          <img src="images/jeans-feminina-rasgada.jpg" alt="Mulher com calça rasgada">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title mb-1">Calça Jeans Rasgada</h5>
+          <p class="card-text">Calça Jeans Rasgada nos joelhos</p>
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalJeansRasgada">Ver Mais</button>
+        </div>
+      </div>
+
+      <div class="card cardFem camisasFem">
+        <div class="card-img-top">
+          <img src="images/camisa-jeans-unisex.jpg" alt="Mulher com camisa Jeans">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title mb-1">Camisa Jeans</h5>
+          <p class="card-text">Camisa Jeans Clara</p>
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCamisaJeans">Ver Mais</button>
+        </div>
+      </div>
+
+      <div class="card cardFem camisasFem">
+        <div class="card-img-top">
+          <img src="images/mulher-bluesa-branca.jpg" alt="Mulher com vestido amarelo">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title mb-1">Camisa Branca</h5>
+          <h6 class="card-subtitle mb-2 mt-2 text-success font-weight-bold">Promoção</h6>
+          <p class="card-text">Camisa Branca de botões</p>
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalPromocao2">Ver Mais</button>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+
+  <!-- Modals Feminino -->
+
+  <div class="modal fade" id="modalVestidoVerde">
+    <div class="modal-dialog modal-sm modal-dialog-centered">
+      <div class="modal-content align-items-center justify-content-center">
+        <div class="modal-header">
+          Adquira já
+        </div>
+        <div class="modal-body">
+          <h3>Vestido Verde</h3>
+          <p class="d-flex flex-column">
+            <p><s>R$199,98</s></p>
+            <p>Por Apenas R$<span>149,99</span></p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" onclick="addItem(this)">
+            Comprar Agora
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modalSapatoRosa">
+    <div class="modal-dialog modal-sm modal-dialog-centered">
+      <div class="modal-content align-items-center justify-content-center">
+        <div class="modal-header">
+          Adquira já
+        </div>
+        <div class="modal-body">
+          <h3>Sapato Rosa</h3>
+          <p class="d-flex flex-column">
+            <p><s>R$149,98</s></p>
+            <p>Por Apenas R$<span>129,99</span></p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" onclick="addItem(this)">
+            Comprar Agora
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modalSapatoAmarelo">
+    <div class="modal-dialog modal-sm modal-dialog-centered">
+      <div class="modal-content align-items-center justify-content-center">
+        <div class="modal-header">
+          Adquira já
+        </div>
+        <div class="modal-body">
+          <h3>Sapato Amarelo</h3>
+          <p class="d-flex flex-column">
+            <p><s>R$149,98</s></p>
+            <p>Por Apenas R$<span>126,99</span></p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" onclick="addItem(this)">
+            Comprar Agora
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modalBotaPreta">
+    <div class="modal-dialog modal-sm modal-dialog-centered">
+      <div class="modal-content align-items-center justify-content-center">
+        <div class="modal-header">
+          Adquira já
+        </div>
+        <div class="modal-body">
+          <h3>Bota Preta</h3>
+          <p class="d-flex flex-column">
+            <p><s>R$119,98</s></p>
+            <p>Por Apenas R$<span>106,99</span></p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" onclick="addItem(this)">
+            Comprar Agora
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modalJeansColada">
+    <div class="modal-dialog modal-sm modal-dialog-centered">
+      <div class="modal-content align-items-center justify-content-center">
+        <div class="modal-header">
+          Adquira já
+        </div>
+        <div class="modal-body">
+          <h3>Jeans Colada</h3>
+          <p class="d-flex flex-column">
+            <p><s>R$119,98</s></p>
+            <p>Por Apenas R$<span>99,99</span></p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" onclick="addItem(this)">
+            Comprar Agora
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modalJeansRasgada">
+    <div class="modal-dialog modal-sm modal-dialog-centered">
+      <div class="modal-content align-items-center justify-content-center">
+        <div class="modal-header">
+          Adquira já
+        </div>
+        <div class="modal-body">
+          <h3>Jeans Rasgada</h3>
+          <p class="d-flex flex-column">
+            <p><s>R$115,98</s></p>
+            <p>Por Apenas R$<span>95,99</span></p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" onclick="addItem(this)">
+            Comprar Agora
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="modalCamisaJeans">
+    <div class="modal-dialog modal-sm modal-dialog-centered">
+      <div class="modal-content align-items-center justify-content-center">
+        <div class="modal-header">
+          Adquira já
+        </div>
+        <div class="modal-body">
+          <h3>Camisa Jeans</h3>
+          <p class="d-flex flex-column">
+            <p><s>R$139,98</s></p>
+            <p>Por Apenas R$<span>119,99</span></p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" onclick="addItem(this)">
+            Comprar Agora
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  
+  <!-- Cards Masculino -->
+
+
+  <section class="masculino" id="masculino">
+    <h1 class="mb-5">Masculino</h1>
+    <nav>
+      <ul class="nav nav-pills justify-content-center align-items-center mb-5">
+        <a class="listMas nav-link active" data-filter="allMas">Todos</a>
+        <a class="listMas nav-link" data-filter="camisasMas">Camisetas</a>
+        <a class="listMas nav-link" data-filter="calcasMas">Calças</a>
+        <a class="listMas nav-link" data-filter="sapatosMas">Sapatos</a>
+      </ul>
+    </nav>
+    <div class="cards-masculino">
+      <div class="card cardMas camisasMas">
+        <div class="card-img-top">
+          <img src="images/homem-camisa-rosa.jpg" alt="Homem com camisa rosa">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title mb-1">Camisa Rosa</h5>
+          <p class="card-text">Camisa Rosa Claro</p>
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCamisaRosa">Ver Mais</button>
+        </div>
+      </div>
+      
+      <div class="card cardMas calcasMas">
+        <div class="card-img-top">
+          <img src="images/jeans-masculino-larga.jpg" alt="Calça Jeans masculina larga">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title mb-1">Calça Jeans</h5>
+          <p class="card-text">Calça Jeans Larga</p>
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCalcaJeans">Ver Mais</button>
+        </div>
+      </div>
+
+      <div class="card cardMas calcasMas">
+        <div class="card-img-top">
+          <img src="images/homem-calca-preta.jpg" alt="Calça Preta">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title mb-1">Calça Jeans Preta</h5>
+          <h6 class="card-subtitle mb-2 mt-2 text-success font-weight-bold">Promoção</h6>
+          <p class="card-text">Calça Jeans Preta</p>
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalPromocao3">Ver Mais</button>
+        </div>
+      </div>
+
+      <div class="card cardMas sapatosMas">
+        <div class="card-img-top">
+          <img src="images/nike-masculino-verde.jpg" alt="Tenis nike verde">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title mb-1">Nike verde</h5>
+          <p class="card-text">Tênis Nike verde</p>
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalNikeVerde">Ver Mais</button>
+        </div>
+      </div>
+
+      <div class="card cardMas sapatosMas">
+        <div class="card-img-top">
+          <img src="images/nike-masculino-vermelho.jpg" alt="Tênis Nike vermelho">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title mb-1">Nike vermelho</h5>
+          <p class="card-text">Tênis Nike vermelho</p>
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalNikeVermelho">Ver Mais</button>
+        </div>
+      </div>
+
+      <div class="card cardMas sapatosMas">
+        <div class="card-img-top">
+          <img src="images/vans-unisex-vinho.jpg" alt="Tênis Vans vinho">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title mb-1">Vans vinho</h5>
+          <p class="card-text">Tênis Vans vinho</p>
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalVansVinho">Ver Mais</button>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+
+  <!-- Modals Masculino -->
+
+
+  <div class="modal fade" id="modalCamisaRosa">
+    <div class="modal-dialog modal-sm modal-dialog-centered">
+      <div class="modal-content align-items-center justify-content-center">
+        <div class="modal-header">
+          Adquira já
+        </div>
+        <div class="modal-body">
+          <h3>Camisa Rosa</h3>
+          <p class="d-flex flex-column">
+            <p><s>R$249,98</s></p>
+            <p>Por Apenas R$<span>219,99</span></p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" onclick="addItem(this)">
+            Comprar Agora
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modalCalcaJeans">
+    <div class="modal-dialog modal-sm modal-dialog-centered">
+      <div class="modal-content align-items-center justify-content-center">
+        <div class="modal-header">
+          Adquira já
+        </div>
+        <div class="modal-body">
+          <h3>Calça Jeans</h3>
+          <p class="d-flex flex-column">
+            <p><s>R$129,98</s></p>
+            <p>Por Apenas R$<span>109,99</span></p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" onclick="addItem(this)">
+            Comprar Agora
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modalNikeVermelho">
+    <div class="modal-dialog modal-sm modal-dialog-centered">
+      <div class="modal-content align-items-center justify-content-center">
+        <div class="modal-header">
+          Adquira já
+        </div>
+        <div class="modal-body">
+          <h3>Nike Vermelho</h3>
+          <p class="d-flex flex-column">
+            <p><s>R$259,98</s></p>
+            <p>Por Apenas R$<span>229,99</span></p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" onclick="addItem(this)">
+            Comprar Agora
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modalNikeVerde">
+    <div class="modal-dialog modal-sm modal-dialog-centered">
+      <div class="modal-content align-items-center justify-content-center">
+        <div class="modal-header">
+          Adquira já
+        </div>
+        <div class="modal-body">
+          <h3>Nike Verde</h3>
+          <p class="d-flex flex-column">
+            <p><s>R$239,98</s></p>
+            <p>Por Apenas R$<span>219,99</span></p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" onclick="addItem(this)">
+            Comprar Agora
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="modal fade" id="modalVansVinho">
+    <div class="modal-dialog modal-sm modal-dialog-centered">
+      <div class="modal-content align-items-center justify-content-center">
+        <div class="modal-header">
+          Adquira já
+        </div>
+        <div class="modal-body">
+          <h3>Vans Vinho</h3>
+          <p class="d-flex flex-column">
+            <p><s>R$179,98</s></p>
+            <p>Por Apenas R$<span>129,99</span></p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" onclick="addItem(this)">
+            Comprar Agora
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Banner -->
+
+  <div class="banner">
+    <div class="overlay-image" style="background-image: url(images/banner-meio-1.jpg);"></div>
+    <p class="display-1">A moda quem faz é você</p>
+  </div>
+
+
+
+  <!-- Cards Unisex -->
+
+
+  <section class="unisex" id="unisex">
+    <h1 class="mb-5">Unisex</h1>
+    <nav>
+      <ul class="nav nav-pills justify-content-center align-items-center mb-5">
+        <a class="listUni nav-link active" data-filter="allUni">Todos</a>
+        <a class="listUni nav-link" data-filter="camisasUni">Camisetas</a>
+        <a class="listUni nav-link" data-filter="sapatosUni">Sapatos</a>
+      </ul>
+    </nav>
+    <div class="cards-unisex">
+      <div class="card cardUni camisasUni">
+        <div class="card-img-top">
+          <img src="images/homem-camisa-rosa.jpg" alt="Homem com camisa rosa">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title mb-1">Camisa Rosa</h5>
+          <p class="card-text">Camisa Rosa Claro</p>
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCamisaRosa">Ver Mais</button>
+        </div>
+      </div>
+
+      <div class="card cardUni camisasUni">
+        <div class="card-img-top">
+          <img src="images/camisa-jeans-unisex.jpg" alt="Mulher com camisa Jeans">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title mb-1">Camisa Jeans</h5>
+          <p class="card-text">Camisa Jeans Claro</p>
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCamisaJeans">Ver Mais</button>
+        </div>
+      </div>
+      
+
+      <div class="card cardUni sapatosUni">
+        <div class="card-img-top">
+          <img src="images/nike-masculino-verde.jpg" alt="Tenis nike verde">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title mb-1">Nike verde</h5>
+          <p class="card-text">Tênis Nike verde</p>
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalNikeVerde">Ver Mais</button>
+        </div>
+      </div>
+
+      <div class="card cardUni sapatosUni">
+        <div class="card-img-top">
+          <img src="images/nike-masculino-vermelho.jpg" alt="Tênis Nike vermelho">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title mb-1">Nike vermelho</h5>
+          <p class="card-text">Tênis Nike vermelho</p>
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalNikeVermelho">Ver Mais</button>
+        </div>
+      </div>
+
+      <div class="card cardMas sapatosUni">
+        <div class="card-img-top">
+          <img src="images/vans-unisex-vinho.jpg" alt="Tênis Vans vinho">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title mb-1">Vans vinho</h5>
+          <p class="card-text">Tênis Vans vinho</p>
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalVansVinho">Ver Mais</button>
+        </div>
+      </div>   
+    </div>
+  </section>
+
+
+
+  <footer>
+
+    <div class="direitos">
+      <div>
+        <p> Banner feminino - Ivanna Mykhailiuk - Unsplash </p>
+        <p> Homem camisa rosa - halayalex - Freepik </p>
+        <p> Banner Unisex - JD Mason - Unsplash </p>
+        <p> Mulher com Vestido amarelo - svetlanasokolova - Freepik </p>
+        <p> Mulher com blusa branca - svetlanasokolova - Freepik </p>
+      </div>
+
+      <div>
+        <p> Homem com calça preta - keiron castellanos - Unsplash </p>
+        <p> Sapato feminino rosa - mrsiraphol - Freepik </p>
+        <p> Sapato feminino amarelo - valuavitaly - Freepik </p>
+        <p> Bota feminina preta - wirestock - Freepik </p>
+      </div>
+
+      <div>
+        <p> Nike masculino verde - Jade Scarlato - Unsplash </p>
+        <p> Mulher com Vestido verde - Junior REIS - Unsplash </p>
+        <p> Homem com Jeans larga - Bermix Studio - Unsplas </p>
+        <p> Mulher com Jeans rasgada - Haley Phelps - Unsplash </p>
+      </div>
+
+      <div>
+        <p> Nike masculino vermelho - REVOLT - Unsplash </p>
+        <p> Mulher com Jeans colada - Chema Photo - Unsplash </p>
+        <p> Mulher com camisa jeans - Vlad Zaytsev - Unsplash </p>
+        <p> Banner do meio - Nicolas Ladino Silva - Unsplash </p>
+      </div>
+    </div>
+
+    <div class="final">
+      &copy;Copright 2021 - João Pedro - Todos os direitos Reservados
+    </div>
+
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+
+  <script src="js/animates.js"></script>
+  <script src="js/script.js"></script>
+
+</body>
+</html>
+
+
+
+
